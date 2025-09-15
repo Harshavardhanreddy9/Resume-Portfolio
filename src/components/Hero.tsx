@@ -62,8 +62,8 @@ const Hero: React.FC = () => {
               className="space-y-6 sm:space-y-8 text-center max-w-4xl"
             >
             <div className="space-y-3 sm:space-y-4">
-              <div className="flex items-center justify-center min-h-[2.5rem] sm:min-h-[3rem] lg:min-h-[3.5rem]">
-                <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold sm:font-light tracking-tight text-black leading-tight sm:leading-none">
+              <div className="flex items-center justify-center min-h-[2.5rem] sm:min-h-[3rem] lg:min-h-[3.5rem] overflow-hidden">
+                <h1 className="text-xl sm:text-3xl lg:text-4xl font-bold sm:font-light tracking-tight text-black leading-tight sm:leading-none whitespace-nowrap">
                   <span className="typewriter-text">
                     {displayedText}
                   </span>
@@ -97,7 +97,7 @@ const Hero: React.FC = () => {
                       experienceSection.scrollIntoView({ behavior: 'smooth' });
                     }
                   }}
-                  className="px-6 sm:px-8 py-3 sm:py-4 bg-white border border-black text-black font-normal text-sm sm:text-base tracking-wider uppercase hover:bg-black hover:text-white transition-all duration-300 w-full sm:w-auto"
+                  className="px-6 sm:px-8 py-3 sm:py-4 bg-white border border-black text-black font-normal text-base sm:text-lg tracking-wider uppercase hover:bg-black hover:text-white transition-all duration-300 w-full sm:w-auto"
                 >
                   VIEW WORK
                 </motion.button>
@@ -110,7 +110,7 @@ const Hero: React.FC = () => {
                       contactSection.scrollIntoView({ behavior: 'smooth' });
                     }
                   }}
-                  className="px-6 sm:px-8 py-3 sm:py-4 bg-white border border-black text-black font-normal text-sm sm:text-base tracking-wider uppercase hover:bg-black hover:text-white transition-all duration-300 w-full sm:w-auto"
+                  className="px-6 sm:px-8 py-3 sm:py-4 bg-white border border-black text-black font-normal text-base sm:text-lg tracking-wider uppercase hover:bg-black hover:text-white transition-all duration-300 w-full sm:w-auto"
                 >
                   CONTACT
                 </motion.button>
@@ -120,7 +120,7 @@ const Hero: React.FC = () => {
                   href="https://www.linkedin.com/in/contactharshavardhanreddy/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-6 sm:px-8 py-3 sm:py-4 bg-white border border-black text-black font-normal text-sm sm:text-base tracking-wider uppercase hover:bg-black hover:text-white transition-all duration-300 flex items-center justify-center space-x-2 w-full sm:w-auto group"
+                  className="px-6 sm:px-8 py-3 sm:py-4 bg-white border border-black text-black font-normal text-base sm:text-lg tracking-wider uppercase hover:bg-black hover:text-white transition-all duration-300 flex items-center justify-center space-x-2 w-full sm:w-auto group"
                 >
                   <svg className="w-3 h-3 sm:w-4 sm:h-4 fill-black group-hover:fill-white transition-colors duration-300" viewBox="0 0 24 24">
                     <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
