@@ -39,6 +39,12 @@ const Hero: React.FC = () => {
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
+                onClick={() => {
+                  const experienceSection = document.getElementById('experience');
+                  if (experienceSection) {
+                    experienceSection.scrollIntoView({ behavior: 'smooth' });
+                  }
+                }}
                 className="px-8 py-4 bg-white border border-black text-black font-normal text-sm tracking-wider uppercase hover:bg-black hover:text-white transition-all duration-300"
               >
                 VIEW WORK
@@ -46,6 +52,12 @@ const Hero: React.FC = () => {
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
+                onClick={() => {
+                  const contactSection = document.getElementById('contact');
+                  if (contactSection) {
+                    contactSection.scrollIntoView({ behavior: 'smooth' });
+                  }
+                }}
                 className="px-8 py-4 bg-white border border-black text-black font-normal text-sm tracking-wider uppercase hover:bg-black hover:text-white transition-all duration-300"
               >
                 CONTACT
