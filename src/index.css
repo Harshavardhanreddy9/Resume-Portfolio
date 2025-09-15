@@ -1,0 +1,361 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-gray-800;
+  }
+  
+  body {
+    @apply bg-white text-black font-sans;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    font-family: 'Rajdhani', 'Exo 2', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  }
+
+         html {
+           scroll-behavior: smooth;
+         }
+
+         /* Section snap scrolling */
+         body {
+           scroll-snap-type: y mandatory;
+           overflow-x: hidden;
+         }
+
+         section {
+           scroll-snap-align: start;
+           scroll-snap-stop: always;
+           min-height: 100vh;
+         }
+
+  /* Gaming-inspired typography */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Orbitron', 'Rajdhani', sans-serif;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    color: #000000;
+    text-transform: uppercase;
+  }
+
+  h1 {
+    font-weight: 900;
+    letter-spacing: 0.1em;
+  }
+
+  h2 {
+    font-weight: 700;
+    letter-spacing: 0.08em;
+  }
+
+  h3, h4, h5, h6 {
+    font-weight: 600;
+    letter-spacing: 0.06em;
+  }
+
+  /* Ensure text is visible on white background */
+  p, span, div, h1, h2, h3, h4, h5, h6 {
+    color: #000000 !important;
+  }
+
+  .text-gray-600 {
+    color: #000000 !important;
+  }
+
+  .text-gray-500 {
+    color: #000000 !important;
+  }
+
+  .text-black {
+    color: #000000 !important;
+  }
+
+  /* Override any grey text classes */
+  .text-gray-400,
+  .text-gray-300,
+  .text-gray-200,
+  .text-gray-100 {
+    color: #000000 !important;
+  }
+
+  /* Force all text to be black */
+  * {
+    color: #000000 !important;
+  }
+
+  /* Override any other color classes that might interfere */
+  .text-white {
+    color: #000000 !important;
+  }
+
+  .text-blue-500,
+  .text-blue-400,
+  .text-blue-300,
+  .text-green-500,
+  .text-red-500,
+  .text-yellow-500 {
+    color: #000000 !important;
+  }
+
+  /* Button text visibility - black buttons get white text, white buttons get black text */
+  .bg-black,
+  .bg-black *,
+  .bg-black .text-white,
+  .bg-black button,
+  .bg-black span,
+  .bg-black div {
+    color: #ffffff !important;
+  }
+
+  .bg-white,
+  .bg-white *,
+  .bg-white .text-black,
+  .bg-white button,
+  .bg-white span,
+  .bg-white div {
+    color: #000000 !important;
+  }
+
+  /* Specific button text overrides */
+  button.bg-black,
+  button.bg-black * {
+    color: #ffffff !important;
+  }
+
+  button.bg-white,
+  button.bg-white * {
+    color: #000000 !important;
+  }
+
+  /* Hover states for buttons */
+  .hover\\:bg-black:hover,
+  .hover\\:bg-black:hover * {
+    color: #ffffff !important;
+  }
+
+  .hover\\:bg-white:hover,
+  .hover\\:bg-white:hover * {
+    color: #000000 !important;
+  }
+
+         /* Gaming-style buttons */
+         .px-8.py-4 {
+           font-family: 'Orbitron', 'Rajdhani', sans-serif;
+           font-weight: 600;
+           letter-spacing: 0.1em;
+           text-transform: uppercase;
+         }
+
+         .px-8.py-4.bg-black {
+           color: #ffffff !important;
+         }
+
+         .px-8.py-4.bg-black * {
+           color: #ffffff !important;
+         }
+
+         .px-8.py-4.bg-white {
+           color: #000000 !important;
+         }
+
+         .px-8.py-4.bg-white * {
+           color: #000000 !important;
+         }
+
+         .px-8.py-4.border.border-black {
+           color: #000000 !important;
+         }
+
+         .px-8.py-4.border.border-black * {
+           color: #000000 !important;
+         }
+
+         /* Skill tags and technology badges */
+         .bg-black.text-white,
+         .bg-black.text-white *,
+         .bg-black span,
+         .bg-black div,
+         .px-3.py-1.bg-black,
+         .px-3.py-1.bg-black *,
+         .px-3.py-1.bg-black span,
+         .px-3.py-1.bg-black div {
+           color: #ffffff !important;
+         }
+
+         /* Ensure all black background elements have white text */
+         [class*="bg-black"] {
+           color: #ffffff !important;
+         }
+
+         [class*="bg-black"] * {
+           color: #ffffff !important;
+         }
+
+  /* Hover states for all buttons */
+  .px-8.py-4:hover {
+    background-color: #000000 !important;
+    color: #ffffff !important;
+  }
+
+  .px-8.py-4:hover * {
+    color: #ffffff !important;
+  }
+
+  /* Remove all gradient backgrounds and replace with solid colors */
+  .bg-gradient-to-r,
+  .bg-gradient-to-br,
+  .bg-gradient-to-tr,
+  .bg-gradient-to-bl,
+  .bg-gradient-to-tl,
+  .bg-gradient-to-b,
+  .bg-gradient-to-t,
+  .bg-gradient-to-l,
+  .bg-gradient-to-r {
+    background: #000000 !important;
+  }
+
+  /* Override any purple/blue gradient classes */
+  .from-purple-500,
+  .to-blue-500,
+  .from-blue-500,
+  .to-purple-500,
+  .from-indigo-500,
+  .to-purple-500,
+  .from-purple-600,
+  .to-blue-600 {
+    background: #000000 !important;
+  }
+
+  /* Gaming-style navigation */
+  nav button {
+    font-family: 'Orbitron', 'Rajdhani', sans-serif;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  /* Gaming-style text elements */
+  .text-sm {
+    font-family: 'Rajdhani', 'Exo 2', sans-serif;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+  }
+
+  .text-lg {
+    font-family: 'Rajdhani', 'Exo 2', sans-serif;
+    font-weight: 400;
+    letter-spacing: 0.02em;
+  }
+
+  .text-xl, .text-2xl, .text-3xl {
+    font-family: 'Orbitron', 'Rajdhani', sans-serif;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+  }
+}
+
+@layer components {
+  .glass {
+    @apply bg-white/10 backdrop-blur-md border border-white/20;
+  }
+  
+  .glass-dark {
+    @apply bg-black/20 backdrop-blur-md border border-white/10;
+  }
+  
+  .text-gradient {
+    @apply bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent;
+  }
+  
+  .btn-primary {
+    @apply px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-lg font-medium transition-all duration-300 hover:from-blue-600 hover:to-purple-700 hover:scale-105 hover:shadow-lg;
+  }
+  
+  .btn-secondary {
+    @apply px-6 py-3 glass text-white rounded-lg font-medium transition-all duration-300 hover:bg-white/20 hover:scale-105;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-slate-800;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-gradient-to-b from-blue-500 to-purple-600 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply from-blue-400 to-purple-500;
+}
+
+/* Loading animation */
+.loading-dots {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+
+.loading-dots div {
+  position: absolute;
+  top: 33px;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: #3b82f6;
+  animation-timing-function: cubic-bezier(0, 1, 1, 0);
+}
+
+.loading-dots div:nth-child(1) {
+  left: 8px;
+  animation: loading-dots1 0.6s infinite;
+}
+
+.loading-dots div:nth-child(2) {
+  left: 8px;
+  animation: loading-dots2 0.6s infinite;
+}
+
+.loading-dots div:nth-child(3) {
+  left: 32px;
+  animation: loading-dots2 0.6s infinite;
+}
+
+.loading-dots div:nth-child(4) {
+  left: 56px;
+  animation: loading-dots3 0.6s infinite;
+}
+
+@keyframes loading-dots1 {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes loading-dots3 {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+
+@keyframes loading-dots2 {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(24px, 0);
+  }
+}
