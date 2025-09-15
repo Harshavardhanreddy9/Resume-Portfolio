@@ -64,7 +64,7 @@ const Hero: React.FC = () => {
               <div className="absolute inset-0 bg-gray-100 rounded-lg border-2 border-black p-2">
                 <div className="w-full h-full rounded-lg overflow-hidden">
                   <img 
-                    src="/images/profile-photo.jpg" 
+                    src="./images/profile-photo.jpg" 
                     alt="Harsha Vardhan Reddy Goli"
                     className="w-full h-full object-cover rounded-lg"
                     onError={(e) => {
