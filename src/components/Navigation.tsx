@@ -2,11 +2,13 @@ import React, { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { Menu, X, Code, Briefcase, Wrench, FolderOpen, Mail } from 'lucide-react'
 import { useAppStore } from '../hooks/useAppStore'
+import { useSmoothScroll } from '../hooks/useSmoothScroll'
 
 const Navigation: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
   const { currentSection, setCurrentSection } = useAppStore()
+  const { scrollToSection } = useSmoothScroll()
 
   const navItems = [
     { id: 'hero', label: 'Home', icon: Code },
@@ -25,12 +27,9 @@ const Navigation: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
-  const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId)
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' })
-      setCurrentSection(sectionId)
-    }
+  const handleNavClick = (sectionId: string) => {
+    scrollToSection(sectionId)
+    setCurrentSection(sectionId)
     setIsOpen(false)
   }
 
@@ -53,7 +52,7 @@ const Navigation: React.FC = () => {
                   key={item.id}
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  onClick={() => scrollToSection(item.id)}
+                  onClick={() => handleNavClick(item.id)}
                   className={`text-sm font-bold tracking-wider uppercase transition-all duration-300 ${
                     currentSection === item.id
                       ? 'text-black'
@@ -96,7 +95,7 @@ const Navigation: React.FC = () => {
                   key={item.id}
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
-                  onClick={() => scrollToSection(item.id)}
+                  onClick={() => handleNavClick(item.id)}
                   className={`w-full flex items-center space-x-3 px-3 py-2 rounded-lg transition-all duration-300 ${
                     currentSection === item.id
                       ? 'bg-black text-white'

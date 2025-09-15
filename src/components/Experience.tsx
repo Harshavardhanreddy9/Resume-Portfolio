@@ -2,6 +2,7 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import { useInView } from 'framer-motion'
 import { useRef } from 'react'
+import { Eye } from 'lucide-react'
 
 const Experience: React.FC = () => {
   const ref = useRef(null)
@@ -47,15 +48,23 @@ const Experience: React.FC = () => {
   ]
 
   return (
-    <section id="experience" ref={ref} className="min-h-screen py-32 px-4 sm:px-6 lg:px-8 bg-white relative">
+    <motion.section 
+      id="experience" 
+      ref={ref} 
+      className="min-h-screen py-32 px-4 sm:px-6 lg:px-8 bg-white relative"
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8, ease: "easeOut" }}
+      viewport={{ once: true, margin: "-100px" }}
+    >
       {/* Top divider */}
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-black to-transparent"></div>
       
       <div className="max-w-7xl mx-auto">
                <motion.div
-                 initial={{ opacity: 0, y: 30 }}
-                 animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-                 transition={{ duration: 0.8 }}
+                 initial={{ opacity: 0, y: 50 }}
+                 animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+                 transition={{ duration: 1, ease: "easeOut" }}
                  className="text-center mb-16"
                >
                  <h2 className="text-4xl sm:text-5xl font-bold text-black mb-6 tracking-wider">
@@ -67,9 +76,9 @@ const Experience: React.FC = () => {
           {experiences.map((exp, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 30 }}
-              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
+              initial={{ opacity: 0, y: 50 }}
+              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+              transition={{ duration: 0.8, delay: index * 0.15, ease: "easeOut" }}
               className="bg-white border border-black p-8 rounded-2xl shadow-lg flex flex-col lg:flex-row items-start lg:items-center space-y-6 lg:space-y-0 lg:space-x-8"
             >
               <div className="flex-shrink-0 w-full lg:w-1/4 text-center lg:text-left">
@@ -98,12 +107,32 @@ const Experience: React.FC = () => {
             </motion.div>
           ))}
         </div>
+
+        {/* View Resume Button */}
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+          transition={{ duration: 1, delay: 0.8, ease: "easeOut" }}
+          className="text-center mt-16"
+        >
+          <motion.button
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            onClick={() => {
+              window.open('./resume.pdf', '_blank');
+            }}
+            className="bg-black text-white px-8 py-4 rounded-lg flex items-center space-x-3 mx-auto hover:bg-gray-800 transition-all duration-300"
+          >
+            <Eye className="w-5 h-5" style={{ color: 'white' }} />
+            <span className="text-lg font-medium">VIEW RESUME</span>
+          </motion.button>
+        </motion.div>
       </div>
       
       {/* Bottom divider */}
       <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-black to-transparent"></div>
       
-    </section>
+    </motion.section>
   )
 }
 

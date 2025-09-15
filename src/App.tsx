@@ -1,4 +1,5 @@
 import React from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
 import Navigation from './components/Navigation'
 import Hero from './components/Hero'
 import Experience from './components/Experience'
@@ -44,24 +45,38 @@ function App() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
-  if (isLoading) {
-    return <LoadingScreen />
-  }
-
   return (
     <div className="relative min-h-screen bg-white text-black overflow-x-hidden">
       {/* Pure white background like yeezy.com */}
       <div className="fixed inset-0 z-0 bg-white"></div>
 
-      {/* Content with Yeezy-inspired spacing and section snap scrolling */}
-      <div className="relative z-10">
-        <Navigation />
-        <Hero />
-        <Experience />
-        <Skills />
-        <Projects />
-        <Contact />
-      </div>
+      <AnimatePresence mode="wait">
+        {isLoading ? (
+          <motion.div
+            key="loading"
+            initial={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.5, ease: "easeInOut" }}
+          >
+            <LoadingScreen />
+          </motion.div>
+        ) : (
+          <motion.div
+            key="main"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            className="relative z-10"
+          >
+            <Navigation />
+            <Hero />
+            <Experience />
+            <Skills />
+            <Projects />
+            <Contact />
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   )
 }

@@ -19,15 +19,12 @@
            scroll-behavior: smooth;
          }
 
-         /* Section snap scrolling */
+         /* Section snap scrolling - disabled for smooth navigation */
          body {
-           scroll-snap-type: y mandatory;
            overflow-x: hidden;
          }
 
          section {
-           scroll-snap-align: start;
-           scroll-snap-stop: always;
            min-height: 100vh;
          }
 
@@ -278,21 +275,30 @@
   }
 }
 
-/* Custom scrollbar */
+/* Custom scrollbar - Black and White Theme */
 ::-webkit-scrollbar {
   width: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  @apply bg-slate-800;
+  background: #ffffff;
+  border: 1px solid #000000;
 }
 
 ::-webkit-scrollbar-thumb {
-  @apply bg-gradient-to-b from-blue-500 to-purple-600 rounded-full;
+  background: #000000;
+  border-radius: 4px;
+  border: 1px solid #000000;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  @apply from-blue-400 to-purple-500;
+  background: #333333;
+}
+
+/* Firefox scrollbar */
+html {
+  scrollbar-width: thin;
+  scrollbar-color: #000000 #ffffff;
 }
 
 /* Loading animation */
@@ -358,4 +364,54 @@
   100% {
     transform: translate(24px, 0);
   }
+}
+
+/* Typewriter cursor animation */
+@keyframes typewriter-cursor {
+  0%, 50% {
+    opacity: 1;
+  }
+  51%, 100% {
+    opacity: 0;
+  }
+}
+
+.typewriter-cursor {
+  animation: typewriter-cursor 1s infinite;
+  display: inline-block;
+  width: 2px;
+  font-weight: bold;
+  vertical-align: baseline;
+}
+
+/* Game-style typewriter effect */
+.typewriter-text {
+  font-family: 'Courier New', 'Monaco', monospace;
+  letter-spacing: 0.1em;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  vertical-align: baseline;
+  min-width: 0;
+}
+
+/* Smooth scrolling for the entire page */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Enhanced smooth scrolling for better performance */
+* {
+  scroll-behavior: smooth;
+}
+
+/* Smooth transitions for all elements */
+* {
+  transition: all 0.3s ease;
+}
+
+/* Disable transitions during page load for better performance */
+.preload * {
+  transition: none !important;
 }
