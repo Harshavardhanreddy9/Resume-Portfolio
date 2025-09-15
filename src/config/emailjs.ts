@@ -2,9 +2,9 @@
 // Environment variables are used to keep secrets secure
 
 export const EMAILJS_CONFIG = {
-  SERVICE_ID: import.meta.env.VITE_EMAILJS_SERVICE_ID || 'service_0fu50fv',
-  TEMPLATE_ID: import.meta.env.VITE_EMAILJS_TEMPLATE_ID || 'template_contact',
-  PUBLIC_KEY: import.meta.env.VITE_EMAILJS_PUBLIC_KEY || '',
+  SERVICE_ID: (import.meta as any).env?.VITE_EMAILJS_SERVICE_ID || 'service_0fu50fv',
+  TEMPLATE_ID: (import.meta as any).env?.VITE_EMAILJS_TEMPLATE_ID || 'template_contact',
+  PUBLIC_KEY: (import.meta as any).env?.VITE_EMAILJS_PUBLIC_KEY || '',
 }
 
 // Instructions for setup:

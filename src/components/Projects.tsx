@@ -2,7 +2,6 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import { useInView } from 'framer-motion'
 import { useRef } from 'react'
-import { Eye } from 'lucide-react'
 
 const Projects: React.FC = () => {
   const ref = useRef(null)

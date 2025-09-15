@@ -8,7 +8,7 @@ const Hero: React.FC = () => {
   const pauseAtEnd = 2000 // pause at the end before restarting
 
   useEffect(() => {
-    let timeoutId: NodeJS.Timeout
+    let timeoutId: number
     let currentIndex = 0
     let isActive = true
 
