@@ -1,45 +1,7 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import { motion } from 'framer-motion'
 
 const Hero: React.FC = () => {
-  const [displayedText, setDisplayedText] = useState('')
-  const fullName = 'HARSHA VARDHAN REDDY GOLI'
-  const typingSpeed = 100 // milliseconds per character
-  const pauseAtEnd = 2000 // pause at the end before restarting
-
-  useEffect(() => {
-    let timeoutId: number
-    let currentIndex = 0
-    let isActive = true
-
-    const typeText = () => {
-      if (!isActive) return
-      
-      if (currentIndex < fullName.length) {
-        setDisplayedText(fullName.slice(0, currentIndex + 1))
-        currentIndex++
-        timeoutId = setTimeout(typeText, typingSpeed)
-      } else {
-        // Pause at the end, then restart
-        timeoutId = setTimeout(() => {
-          if (!isActive) return
-          currentIndex = 0
-          setDisplayedText('')
-          timeoutId = setTimeout(typeText, 500) // Brief pause before restarting
-        }, pauseAtEnd)
-      }
-    }
-
-    // Start typing after a short delay
-    timeoutId = setTimeout(typeText, 1000)
-
-    return () => {
-      isActive = false
-      if (timeoutId) {
-        clearTimeout(timeoutId)
-      }
-    }
-  }, [fullName, typingSpeed, pauseAtEnd])
 
   return (
     <motion.section 
@@ -62,12 +24,9 @@ const Hero: React.FC = () => {
               className="space-y-6 sm:space-y-8 text-center max-w-4xl"
             >
             <div className="space-y-3 sm:space-y-4">
-              <div className="flex items-center justify-center min-h-[2.5rem] sm:min-h-[3rem] lg:min-h-[3.5rem] overflow-hidden">
+              <div className="flex items-center justify-center min-h-[2.5rem] sm:min-h-[3rem] lg:min-h-[3.5rem]">
                 <h1 className="text-xl sm:text-3xl lg:text-4xl font-bold sm:font-light tracking-tight text-black leading-tight sm:leading-none whitespace-nowrap">
-                  <span className="typewriter-text">
-                    {displayedText}
-                  </span>
-                  <span className="typewriter-cursor text-black ml-1">|</span>
+                  HARSHA VARDHAN REDDY GOLI
                 </h1>
               </div>
               <div className="w-16 sm:w-24 h-0.5 bg-black mx-auto"></div>
